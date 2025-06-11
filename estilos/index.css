@@ -1,0 +1,200 @@
+.contenido-principal {
+  width: 100%;
+  margin: 2rem auto 4rem;
+  padding: 0 1.6rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: rgb(211, 211, 208);
+  margin-top: 10rem;
+  justify-items: center;
+}
+.contenido-principal section {
+  margin-bottom: 15rem;
+  width: 80%;
+}
+
+.hero {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.582)),
+    url("../Imagenes/portada.jpg");
+  background-size: cover;
+  background-position: 50% 90%;
+  padding: 6rem 2rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.562);
+  width: 80%;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+  max-height: 90%;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.descripcion-sitio {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.descripcion-sitio h2 {
+  font-size: 2.8rem;
+  color: #003366;
+  margin-bottom: 4rem;
+}
+
+.descripcion-sitio p {
+  font-size: 1.6rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #444;
+}
+
+.categorias-principales {
+  margin-bottom: 4rem;
+}
+
+.categorias-principales h3 {
+  font-size: 2.2rem;
+  color: #004080;
+  margin-bottom: 7rem;
+  text-align: center;
+}
+
+.lista-categorias-principales {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.categoria-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00aaff, #0077cc);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.categoria-principal:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #0077cc, #005fa3);
+}
+
+.marcas-destacadas {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  width: 100%;
+  border: 2px solid gray;
+  border-radius: 1rem;
+  padding: 3rem;
+  background-color: #9aa7bb;
+}
+
+.marcas-destacadas h3 {
+  font-size: 2.2rem;
+  color: #004080;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.lista-marcas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.lista-marcas > li {
+  flex: 0 1 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marca {
+  text-align: center;
+  background-color: #f7f9fc;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.15rem 0.4rem rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.marca:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.15);
+}
+
+.marca img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.8rem;
+}
+
+.marca span {
+  display: block;
+  font-size: 1.4rem;
+  color: #003366;
+  font-weight: 500;
+}
+.marca a.marca-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.beneficios-mercado {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #f2f6fa;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05);
+  place-items: center;
+}
+
+.beneficios-mercado h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+  color: #004080;
+}
+
+.lista-beneficios {
+  padding: 0;
+  color: #333;
+  font-size: 1.4rem;
+}
+
+.lista-beneficios li {
+  margin-bottom: 1rem;
+  padding-left: 1.8rem;
+}

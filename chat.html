@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Marketplace</title>
+    <link rel="stylesheet" href="estilos/chat.css" />
+    <link rel="stylesheet" href="estilos/general.css" />
+    <script src="scripts/general.js" defer></script>
+    <script src="scripts/chat.js" defer></script>
+</head>
+
+<body>
+  <header class="encabezado">
+    <div class="contenedor-encabezado">
+      <div class="header-izquierda">
+        <div class="logo">
+          <a><h1>Marketplace</h1></a>
+        </div>
+      </div>
+
+      <div class="header-derecha">
+        <div class="perfil">
+          <button class="boton-perfil" aria-haspopup="true" aria-expanded="false" aria-controls="menu-perfil">
+            <div class="foto-perfil"></div>
+            <span class="texto-perfil">Perfil</span>
+          </button>
+
+          <nav class="menu-perfil" id="menu-perfil" hidden>
+            <ul>
+              <li><a href="#">Mi perfil</a></li>
+              <li><a href="#">Mis productos</a></li>
+              <li><a href="chat.html">Mensajes</a></li>
+              <li><a href="#">Publicar</a></li>
+              <li><a href="#">Favoritos</a></li>
+              <li><a href="index.html">Cerrar sesión</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="zona-chat">
+    <!-- Panel izquierdo  -->
+    <aside class="panel-conversaciones">
+      <div class="busqueda-chat">
+        <input type="text" placeholder="Buscar..." />
+      </div>
+
+      <div class="pestanas-chat">
+        <button class="pestana activa" data-seccion="ofertados">Ofertados</button>
+        <button class="pestana" data-seccion="comprando">Comprando</button>
+      </div>
+
+      <div class="lista-conversaciones" id="lista-ofertados">
+        <article class="conversacion" data-usuario="Juan Pérez">
+          <img src="img/avatar1.jpg" alt="Avatar" class="avatar" />
+          <div class="info-conversacion">
+            <h4>Juan Pérez</h4>
+            <p>Hola, ¿sigue disponible?</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="lista-conversaciones" id="lista-comprando">
+        <article class="conversacion" data-usuario="María López">
+          <img src="img/avatar2.jpg" alt="Avatar" class="avatar" />
+          <div class="info-conversacion">
+            <h4>María López</h4>
+            <p>Estoy interesada en tu publicación.</p>
+          </div>
+        </article>
+      </div>
+    </aside>
+
+    <!-- Panel derecho -->
+    <section class="panel-chat">
+      <div class="cabecera-chat">
+        <button class="btn-volver">&#8592;</button>
+        <h3 id="nombre-usuario-chat">Nombre del usuario</h3>
+      </div>
+
+      <div class="contenido-chat">
+        <div class="mensaje entrante">Hola, ¿sigue disponible?</div>
+        <div class="mensaje saliente">Sí, claro.</div>
+      </div>
+
+      <div class="zona-escritura">
+        <button class="icono-adjuntar" title="Adjuntar imagen">📎</button>
+        <input type="text" placeholder="Escribe un mensaje..." class="input-mensaje" />
+        <button class="boton-enviar" title="Enviar mensaje">➤</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
