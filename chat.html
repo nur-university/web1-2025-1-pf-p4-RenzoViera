@@ -2,13 +2,13 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat Marketplace</title>
-    <link rel="stylesheet" href="estilos/chat.css" />
-    <link rel="stylesheet" href="estilos/general.css" />
-    <script src="scripts/general.js" defer></script>
-    <script src="scripts/chat.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat Marketplace</title>
+  <link rel="stylesheet" href="estilos/chat.css" />
+  <link rel="stylesheet" href="estilos/general.css" />
+  <script src="scripts/general.js" defer></script>
+  <script src="scripts/chat.js" defer></script>
 </head>
 
 <body>
@@ -43,8 +43,8 @@
   </header>
 
   <main class="zona-chat">
-    <!-- Panel izquierdo  -->
-    <aside class="panel-conversaciones">
+    <!-- Panel izquierdo -->
+    <aside class="panel-conversaciones visible">
       <div class="busqueda-chat">
         <input type="text" placeholder="Buscar..." />
       </div>
@@ -54,40 +54,58 @@
         <button class="pestana" data-seccion="comprando">Comprando</button>
       </div>
 
-      <div class="lista-conversaciones" id="lista-ofertados">
-        <article class="conversacion" data-usuario="Juan Pérez">
+      <!-- Lista Ofertados -->
+      <div class="lista-conversaciones visible" id="lista-ofertados">
+        <article class="conversacion" data-usuario="Luis García" data-foto="img/avatar1.jpg" data-producto="Tablet Samsung A8">
           <img src="img/avatar1.jpg" alt="Avatar" class="avatar" />
           <div class="info-conversacion">
-            <h4>Juan Pérez</h4>
-            <p>Hola, ¿sigue disponible?</p>
+            <h4>Luis García | Tablet Samsung A8</h4>
+            <p>¿Aún tienes el producto?</p>
           </div>
         </article>
+
+
+        <article class="conversacion" data-usuario="Manuel Perez" data-foto="img/avatar1.jpg" data-producto="Tablet Samsung A8">
+          <img src="img/avatar1.jpg" alt="Avatar" class="avatar" />
+          <div class="info-conversacion">
+            <h4>Manuel Perez | Tablet Samsung A8</h4>
+            <p>¿Aún tienes el producto?</p>
+          </div>
+        </article>
+
       </div>
 
-      <div class="lista-conversaciones" id="lista-comprando">
-        <article class="conversacion" data-usuario="María López">
-          <img src="img/avatar2.jpg" alt="Avatar" class="avatar" />
+      <!-- Lista Comprando -->
+      <div class="lista-conversaciones oculto" id="lista-comprando">
+        <article class="conversacion" data-usuario="Sofía Méndez" data-producto="Monitor LG 24''" data-foto="img/avatar2.jpg">
+          <img src="img/avatar2.jpg" alt="Avatar Sofía Méndez" class="avatar" />
           <div class="info-conversacion">
-            <h4>María López</h4>
-            <p>Estoy interesada en tu publicación.</p>
+            <h4>Monitor LG 24''</h4>
+            <p>¡Gracias por tu interés!</p>
+          </div>
+        </article>
+
+        <article class="conversacion" data-usuario="Carlos Ruiz" data-producto="Audífonos Sony WH-1000XM4" data-foto="img/avatar4.jpg">
+          <img src="img/avatar4.jpg" alt="Avatar Carlos Ruiz" class="avatar" />
+          <div class="info-conversacion">
+            <h4>Audífonos Sony WH-1000XM4</h4>
+            <p>¿El precio es negociable?</p>
           </div>
         </article>
       </div>
     </aside>
 
     <!-- Panel derecho -->
-    <section class="panel-chat">
+    <section class="panel-chat oculto">
       <div class="cabecera-chat">
-        <button class="btn-volver">&#8592;</button>
-        <h3 id="nombre-usuario-chat">Nombre del usuario</h3>
+        <button class="btn-volver" aria-label="Volver">←</button>
+        <img id="foto-usuario-chat" src="" alt="" class="avatar chat-avatar" style="display:none;" />
+        <h3 id="nombre-usuario-chat"></h3>
       </div>
 
-      <div class="contenido-chat">
-        <div class="mensaje entrante">Hola, ¿sigue disponible?</div>
-        <div class="mensaje saliente">Sí, claro.</div>
-      </div>
+      <div class="contenido-chat"></div>
 
-      <div class="zona-escritura">
+      <div class="zona-escritura" style="display:none;">
         <button class="icono-adjuntar" title="Adjuntar imagen">📎</button>
         <input type="text" placeholder="Escribe un mensaje..." class="input-mensaje" />
         <button class="boton-enviar" title="Enviar mensaje">➤</button>
@@ -95,4 +113,5 @@
     </section>
   </main>
 </body>
+
 </html>
