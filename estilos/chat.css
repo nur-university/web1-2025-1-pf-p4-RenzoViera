@@ -4,7 +4,6 @@
   height: calc(100vh - 101.8px);
 }
 
-/* Panel izquierdo: Lista de conversaciones */
 .panel-conversaciones {
   flex: 1;
   display: flex;
@@ -26,7 +25,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.8rem;
-  background-color: #e9e9e9;
+  background-color: #e2e2e2;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -41,7 +40,7 @@
 }
 
 .pestana.activa {
-  background-color: #fff;
+  background-color: #7ac3e6;
 }
 
 .lista-conversaciones {
@@ -62,6 +61,11 @@
   border-radius: 8px;
   background-color: #fdfdfd;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.conversacion:hover {
+  background-color: #e2e2e2;
 }
 
 .avatar {
@@ -74,30 +78,34 @@
 
 .info-conversacion h4 {
   font-size: 1rem;
+  margin: 0;
 }
 
 .info-conversacion p {
   font-size: 0.85rem;
   color: #666;
+  margin: 0;
 }
 
-/* Panel derecho: Chat */
 .panel-chat {
   flex: 2;
   display: flex;
   flex-direction: column;
   background-color: #e5ddd5;
   height: 100%;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .cabecera-chat {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.8rem;
+  padding: 0.8rem 1rem;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .btn-volver {
@@ -114,6 +122,17 @@
   flex-direction: column;
   gap: 0.6rem;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent;
+}
+
+.contenido-chat::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contenido-chat::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 4px;
 }
 
 .mensaje {
@@ -121,6 +140,7 @@
   padding: 0.6rem 1rem;
   border-radius: 15px;
   font-size: 0.95rem;
+  word-wrap: break-word;
 }
 
 .entrante {
@@ -134,16 +154,17 @@
 }
 
 .oculto {
-  display: none;
+  display: none !important;
 }
 
 .visible {
-  display: flex;
+  display: flex !important;
 }
+
 .zona-escritura {
   display: flex;
   align-items: center;
-  padding: 0.6rem;
+  padding: 0.6rem 1rem;
   background-color: #fff;
   border-top: 1px solid #ccc;
   gap: 0.6rem;
@@ -163,20 +184,31 @@
   border: 1px solid #ccc;
   border-radius: 20px;
   font-size: 1rem;
+  outline-offset: 2px;
 }
 
 body {
   margin-top: -38px;
-  width: 100%;  
+  width: 100%;
 }
-.header-izquierda{
+
+.header-izquierda {
   margin: 0 auto;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #666;
 }
 
 @media (min-width: 768px) {
   .zona-chat {
     flex-direction: row;
     padding: 0;
+    height: calc(100vh - 101.8px);
   }
 
   .panel-conversaciones {
