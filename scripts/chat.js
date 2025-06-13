@@ -6,10 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   const panelChat = document.querySelector('.panel-chat');
   const nombreUsuarioChat = document.getElementById('nombre-usuario-chat');
+  const fotoUsuarioChat = document.getElementById('foto-usuario-chat');
   const btnVolver = document.querySelector('.btn-volver');
   const zonaEscritura = panelChat.querySelector('.zona-escritura');
   const contenidoChat = panelChat.querySelector('.contenido-chat');
-  const listaConversaciones = document.querySelectorAll('.lista-conversaciones');
+
+  let chatAbierto = null;
 
   function crearFondoSinChats() {
     const div = document.createElement('div');
@@ -52,24 +54,29 @@ document.addEventListener('DOMContentLoaded', () => {
       listas[seccion].classList.remove('oculto');
       listas[seccion].classList.add('visible');
 
-      ocultarPanelChat();
+      panelChat.classList.add('oculto');
+      panelChat.classList.remove('visible');
+
+      zonaEscritura.style.display = 'none';
     });
   });
 
-  function ocultarPanelChat() {
-    panelChat.classList.add('oculto');
-    panelChat.classList.remove('visible');
-    contenidoChat.innerHTML = '';
-    zonaEscritura.style.display = 'none';
-    nombreUsuarioChat.textContent = '';
-  }
-
-  function mostrarPanelChat(usuario, mensajes = []) {
+  function mostrarPanelChat(usuario, mensajes = [], foto = '') {
     panelChat.classList.remove('oculto');
     panelChat.classList.add('visible');
     panelChat.style.backgroundColor = '#e5ddd5';
     zonaEscritura.style.display = 'flex';
     nombreUsuarioChat.textContent = usuario;
+
+    if (foto) {
+      fotoUsuarioChat.src = foto;
+      fotoUsuarioChat.alt = usuario;
+      fotoUsuarioChat.style.display = 'block';
+    } else {
+      fotoUsuarioChat.style.display = 'none';
+      fotoUsuarioChat.src = '';
+      fotoUsuarioChat.alt = '';
+    }
 
     contenidoChat.innerHTML = '';
 
@@ -91,12 +98,17 @@ document.addEventListener('DOMContentLoaded', () => {
     contenidoChat.scrollTop = contenidoChat.scrollHeight;
   }
 
-  Object.values(listas).forEach(lista => {
+  Object.values(listas).forEach((lista, index) => {
     lista.addEventListener('click', e => {
       const conv = e.target.closest('.conversacion');
       if (!conv) return;
 
+      if (chatAbierto === conv) return;
+
+      chatAbierto = conv;
       const usuario = conv.dataset.usuario || 'Sin nombre';
+      const producto = conv.dataset.producto || '';
+      const foto = conv.dataset.foto || '';
       let mensajes = [];
 
       if (usuario === 'Juan Pérez') {
@@ -112,34 +124,50 @@ document.addEventListener('DOMContentLoaded', () => {
         mensajes = [];
       }
 
-      mostrarPanelChat(usuario, mensajes);
+      if (pestanas[index].dataset.seccion === 'comprando') {
+        mostrarPanelChat(usuario, mensajes, foto);
+      } else {
+        mostrarPanelChat(usuario, mensajes, foto);
+      }
 
       if (window.innerWidth < 768) {
-        document.querySelector('.panel-conversaciones').classList.remove('visible');
-        document.querySelector('.panel-conversaciones').classList.add('oculto');
+        listas[pestanas[index].dataset.seccion].classList.remove('visible');
+        listas[pestanas[index].dataset.seccion].classList.add('oculto');
       }
     });
   });
 
   btnVolver.addEventListener('click', () => {
-    ocultarPanelChat();
-    document.querySelector('.panel-conversaciones').classList.remove('oculto');
-    document.querySelector('.panel-conversaciones').classList.add('visible');
+    panelChat.classList.add('oculto');
+    panelChat.classList.remove('visible');
+
+    const activa = Array.from(pestanas).find(p => p.classList.contains('activa'));
+    if (activa) {
+      const seccion = activa.dataset.seccion;
+      listas[seccion].classList.add('visible');
+      listas[seccion].classList.remove('oculto');
+    }
+
+    zonaEscritura.style.display = 'none';
   });
 
   pestanas[0].click();
+  chatAbierto = null;
 
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 768) {
-      document.querySelector('.panel-conversaciones').classList.add('visible');
-      document.querySelector('.panel-conversaciones').classList.remove('oculto');
+      Object.values(listas).forEach(lista => {
+        lista.classList.add('visible');
+        lista.classList.remove('oculto');
+      });
       panelChat.classList.add('visible');
       panelChat.classList.remove('oculto');
       panelChat.style.backgroundColor = '#e5ddd5';
       zonaEscritura.style.display = 'flex';
     } else {
-      if (!panelChat.classList.contains('visible')) {
-        panelChat.style.backgroundColor = '#000';
+      if (!chatAbierto) {
+        panelChat.classList.add('oculto');
+        panelChat.classList.remove('visible');
         zonaEscritura.style.display = 'none';
       }
     }
