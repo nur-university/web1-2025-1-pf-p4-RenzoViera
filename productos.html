@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Marketplace de productos electrónicos y más" />
+  <title>Marketplace</title>
+  <link rel="stylesheet" href="estilos/general.css" />
+  <link rel="stylesheet" href="estilos/productos.css" />
+  <script src="scripts/general.js" defer></script>
+</head>
+
+<body>
+  <div class="contenedor-body">
+    <!-- Encabezado -->
+    <header class="encabezado">
+      <div class="contenedor-encabezado">
+        <div class="header-izquierda">
+          <!-- Logo -->
+          <div class="logo">
+            <a><h1>Marketplace</h1></a>
+          </div>
+            
+        
+          <!-- Barra de búsqueda -->
+          <div class="barra-busqueda">
+            <input type="text" placeholder="Buscar productos..." class="campo-busqueda" />
+            <button class="boton-buscar">
+              <span class="icono-lupa">🔍</span>
+              <span class="texto-buscar">Buscar</span>
+            </button>
+          </div>
+
+        </div>
+        
+        <div class="header-derecha">
+
+          <div class="autenticacion">
+            <button class="boton-registrarse">Registrarse</button>
+            <button class="boton-iniciar-sesion">Login</button>
+          </div>
+
+          <!-- Perfil con menú desplegable -->
+            <div class="perfil">
+              <button class="boton-perfil" aria-haspopup="true" aria-expanded="false" aria-controls="menu-perfil">
+                <div class="foto-perfil"></div>
+                <span class="texto-perfil">Perfil</span>
+              </button>
+
+              <!-- Menú desplegable oculto -->
+              <nav class="menu-perfil" id="menu-perfil" hidden>
+                <ul>
+                  <li><a href="#">Mi perfil</a></li>
+                  <li><a href="#">Mis productos</a></li>
+                  <li><a href="chat.html">Mensajes</a></li>
+                  <li><a href="#">Publicar</a></li>
+                  <li><a href="#">Favoritos</a></li>
+                  <li><a href="index.html">Cerrar sesión</a></li>
+                </ul>
+              </nav>
+            </div>
+            
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Barra de categorías -->
+    <nav class="barra-categorias">
+      <ul class="lista-categorias">
+        <li class="categoria"><a href="index.html">Categorías</a></li>
+        <li class="categoria"><a href="index.html">Nuevos</a></li>
+        <li class="categoria"><a href="index.html">Populares</a></li>
+        <li class="categoria"><a href="index.html">Llamativos</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="contenido-principal">
+
+      <section class="marcas-destacadas">
+            <h3>Marcas destacadas</h3>
+            <ul class="lista-marcas">
+            <li class="marca">
+                <img src="Imagenes/ford.png" alt="Ford">
+                <span>Ford</span>
+            </li>
+            <li class="marca">
+                <img src="Imagenes/honda.png" alt="Honda">
+                <span>Honda</span>
+            </li>
+            <li class="marca">
+                <img src="Imagenes/toyota.png" alt="Toyota">
+                <span>Toyota</span>
+            </li>
+            <li class="marca">
+                <img src="Imagenes/bmw.png" alt="BMW">
+                <span>BMW</span>
+            </li>
+            <li class="marca">
+                <img src="Imagenes/tesla.png" alt="Tesla">
+                <span>Tesla</span>
+            </li>
+            <li class="marca">
+                <img src="Imagenes/mercedes-benz.png" alt="mercedes-benz">
+                <span>mercedes-benz</span>
+            </li>
+            </ul>
+        </section>
+
+      <!-- Lista de productos -->
+      <section class="lista-productos">
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del dddddddddddddddddddddddddddddddddddddddddddddddproducto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+                <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+                <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+                <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="informacion.html?producto=1" class="producto-link">
+            <div class="imagen-producto">
+              <img src="Imagenes/auto.jpg" alt="Producto 1" />
+            </div>
+            <h2 class="nombre-producto">Producto 1</h2>
+            <p class="descripcion-producto">Descripción del producto 1.</p>
+            <div class="precio-boton">
+              <p class="precio-producto">$10.00</p>
+              <button class="agregar-favorito">✰</button>
+            </div>
+          </a>
+        </article>
+
+      </section>
+
+      <!-- Paginación -->
+      <nav class="paginacion" aria-label="Navegación de productos">
+        <button class="boton-pagina" id="anterior" disabled>Anterior</button>
+
+        <ul class="lista-paginas">
+          <li><button class="boton-pagina activo" data-pagina="1">1</button></li>
+          <li><button class="boton-pagina" data-pagina="2">2</button></li>
+          <li><button class="boton-pagina" data-pagina="3">3</button></li>
+          <li><button class="boton-pagina" data-pagina="4">4</button></li>
+          <!-- Más botones según cantidad de páginas -->
+        </ul>
+
+        <button class="boton-pagina" id="siguiente">Siguiente</button>
+      </nav>
+
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="contenedor-footer">
+
+        <!-- Logo centrado -->
+        <div class="logo-footer">
+          <h2>Marketplace</h2>
+        </div>
+
+        <!-- Enlaces a redes sociales -->
+        <nav class="redes-sociales">
+          <ul class="redes-footer">
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
+        </nav>
+
+        <!-- Información de contacto o legal -->
+        <div class="info-pie-pagina">
+          <p>© 2025 Marketplace. Todos los derechos reservados.</p>
+          <p><a href="#">Términos y condiciones</a> | <a href="#">Política de privacidad</a></p>
+        </div>
+
+      </div>
+    </footer>
+
+</body>
+</html>

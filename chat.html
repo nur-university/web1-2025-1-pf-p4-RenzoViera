@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat Marketplace</title>
+  <link rel="stylesheet" href="estilos/chat.css" />
+  <link rel="stylesheet" href="estilos/general.css" />
+  <script src="scripts/general.js" defer></script>
+  <script src="scripts/chat.js" defer></script>
+</head>
+
+<body>
+  <header class="encabezado">
+    <div class="contenedor-encabezado">
+      <div class="header-izquierda">
+        <div class="logo">
+          <a><h1>Marketplace</h1></a>
+        </div>
+      </div>
+
+      <div class="header-derecha">
+        <div class="perfil">
+          <button class="boton-perfil" aria-haspopup="true" aria-expanded="false" aria-controls="menu-perfil">
+            <div class="foto-perfil"></div>
+            <span class="texto-perfil">Perfil</span>
+          </button>
+
+          <nav class="menu-perfil" id="menu-perfil" hidden>
+            <ul>
+              <li><a href="#">Mi perfil</a></li>
+              <li><a href="#">Mis productos</a></li>
+              <li><a href="chat.html">Mensajes</a></li>
+              <li><a href="#">Publicar</a></li>
+              <li><a href="#">Favoritos</a></li>
+              <li><a href="index.html">Cerrar sesión</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="zona-chat">
+    <!-- Panel izquierdo -->
+    <aside class="panel-conversaciones visible">
+      <div class="busqueda-chat">
+        <input type="text" placeholder="Buscar..." />
+      </div>
+
+      <div class="pestanas-chat">
+        <button class="pestana activa" data-seccion="ofertados">Ofertados</button>
+        <button class="pestana" data-seccion="comprando">Comprando</button>
+      </div>
+
+      <!-- Lista Ofertados -->
+      <div class="lista-conversaciones visible" id="lista-ofertados">
+        <article class="conversacion" data-usuario="Luis García" data-foto="img/avatar1.jpg" data-producto="Tablet Samsung A8">
+          <img src="img/avatar1.jpg" alt="Avatar" class="avatar" />
+          <div class="info-conversacion">
+            <h4>Luis García | Tablet Samsung A8</h4>
+            <p>¿Aún tienes el producto?</p>
+          </div>
+        </article>
+
+
+        <article class="conversacion" data-usuario="Manuel Perez" data-foto="img/avatar1.jpg" data-producto="Tablet Samsung A8">
+          <img src="img/avatar1.jpg" alt="Avatar" class="avatar" />
+          <div class="info-conversacion">
+            <h4>Manuel Perez | Tablet Samsung A8</h4>
+            <p>¿Aún tienes el producto?</p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Lista Comprando -->
+      <div class="lista-conversaciones oculto" id="lista-comprando">
+        <article class="conversacion" data-usuario="Sofía Méndez" data-producto="Monitor LG 24''" data-foto="img/avatar2.jpg">
+          <img src="img/avatar2.jpg" alt="Avatar Sofía Méndez" class="avatar" />
+          <div class="info-conversacion">
+            <h4>Monitor LG 24''</h4>
+            <p>¡Gracias por tu interés!</p>
+          </div>
+        </article>
+
+        <article class="conversacion" data-usuario="Carlos Ruiz" data-producto="Audífonos Sony WH-1000XM4" data-foto="img/avatar4.jpg">
+          <img src="img/avatar4.jpg" alt="Avatar Carlos Ruiz" class="avatar" />
+          <div class="info-conversacion">
+            <h4>Audífonos Sony WH-1000XM4</h4>
+            <p>¿El precio es negociable?</p>
+          </div>
+        </article>
+      </div>
+    </aside>
+
+    <!-- Panel derecho -->
+    <section class="panel-chat oculto">
+      <div class="cabecera-chat">
+        <button class="btn-volver" aria-label="Volver">←</button>
+        <img id="foto-usuario-chat" src="" alt="" class="avatar chat-avatar" style="display:none;" />
+        <h3 id="nombre-usuario-chat"></h3>
+      </div>
+
+      <div class="contenido-chat"></div>
+
+      <div class="zona-escritura" style="display:none;">
+        <button class="icono-adjuntar" title="Adjuntar imagen">📎</button>
+        <input type="text" placeholder="Escribe un mensaje..." class="input-mensaje" />
+        <button class="boton-enviar" title="Enviar mensaje">➤</button>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
